@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import backgroundImg from '../../assets/background.jpg'
+import backgroundImg from '../../assets/color-morph.svg'
 
 const Details = () => {
     const userDetails = useLoaderData();

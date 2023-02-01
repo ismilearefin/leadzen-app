@@ -1,5 +1,5 @@
 import './App.css';
-import backgroundImg from '../src/assets/background.jpg'
+import backgroundImg from '../src/assets/color-morph.svg';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
