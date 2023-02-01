@@ -13,7 +13,7 @@ const Pagination = ({totalPosts, postsPerPage, setCurrentPage, currentPage}) => 
                 onClick={()=> setCurrentPage(page)} 
                 className={
                     page === currentPage ? 
-                    'border px-3 text-md text-white bg-rose-600' 
+                    'border px-3 text-md text-black bg-rose-100' 
                     : 
                     'border px-3 text-md text-white'}
                     >

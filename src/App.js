@@ -1,5 +1,6 @@
 import './App.css';
 import backgroundImg from '../src/assets/background.jpg'
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Pagination from './Components/Pagination/Pagination';
@@ -10,9 +11,10 @@ function App() {
   const postsPerPage = 3;
 
   useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(data=> setUser(data))
+    axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(function(response) {
+      setUser(response.data)
+    })
   },[])
 
   const lastPostIndex = currentPage * postsPerPage;
@@ -23,7 +25,7 @@ function App() {
     <div className="App bg-cover bg-center bg-no-repeat h-screen grid items-center" style={{backgroundImage:`url(${backgroundImg})`}}>
       <div className=' w-3/4 h-[450px] mx-auto grid items-center'>
           {
-            showUser.map(singleuser => (
+            showUser?.map(singleuser => (
               <div key={singleuser.id} className='rounded-lg bg-white flex justify-between items-center  p-10 border'>
             <div className=''>
               <p className='font-bold text-xl'>Name</p>
